@@ -1,0 +1,49 @@
+<form (submit)="addUser(username.value,password.value,email.value)" #f="ngForm">
+	<div class="input">
+		<label for="username">Username</label>
+		<input type="text" #username>
+	</div>
+	<div class="input">
+		<label for="password">Password</label>
+		<input type="text" #password>
+	</div>
+	<div class="input">
+		<label for="email">Email</label>
+		<input type="email" #email>
+	</div>
+	<div class="input">
+		<input type="radio" name="status" [value]="'superadmin'" [(ngModel)]="status"> Super Admin
+		<input type="radio" name="status" [value]="'admin'" [(ngModel)]="status"> Admin
+	</div>
+
+	<div class="input">
+		<button class="login" type="submit"> ADD </button>
+		<p>{{respone}}</p>
+	</div>
+</form>
+<ul>
+	<li style="list-style-type: none" *ngFor="let user of userList; let i = index">
+		{{i+1}}. {{user.username}} {{user.email}}
+		<button (click)="toggleEdit(i)">Edit</button>
+		<button (click)="deleteUser(user)">X</button>
+
+		<form *ngIf="isEditable[i] == true" (submit)="editUser(user.adm_id,username.value,password.value,email.value,user.status)">
+			<div class="input">
+				<label for="username">Username</label>
+				<input type="text" #username [value]="user.username">
+			</div>
+			<div class="input">
+				<label for="password">Password</label>
+				<input type="text" #password [value]="user.password">
+			</div>
+			<div class="input">
+				<label for="email">Email</label>
+				<input type="email" #email [value]="user.email">
+			</div>
+			<div class="input">
+				<button class="save" type="submit"> Save </button>
+				<button class="cancel" (click)="toggleEdit(i)"> cancel </button>
+			</div>
+		</form>
+	</li>
+</ul>

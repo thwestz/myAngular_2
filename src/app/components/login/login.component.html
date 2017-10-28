@@ -1,0 +1,15 @@
+<div>
+  <form (submit)="login(username.value,password.value)">
+    	<div class="input">
+      	<label for="username">Username</label>
+      	<input type="text" #username >
+    	</div>
+    	<div class="input">
+      	<label for="password">Password</label>
+      	<input type="password" #password >
+    	</div>
+    	<button class="login" type="submit"> LOGIN </button>
+	</form>
+<br>
+<h1 id="waring">{{result_text}}</h1>
+</div>

@@ -1,0 +1,20 @@
+<header>Welcome to my Angular Website</header>
+<div>
+	<ul class="nav" *ngIf="this.loginService.getUserLoggedIn() == true">
+		<li>
+			<a routerLink="../home">Home</a>
+		</li>
+		<li>
+			<a routerLink="../user">User</a>
+		</li>
+		<li>
+			<a routerLink="../aboutus">About Us</a>
+		</li>
+		<li>
+			<a routerLink="../user-management">Management</a>
+		</li>
+		<li>
+			<a routerLink="../" (click)='logOut()'>Log Out</a>
+		</li>
+	</ul>
+</div>

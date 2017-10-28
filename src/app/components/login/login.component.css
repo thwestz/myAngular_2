@@ -1,0 +1,45 @@
+:host{
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+div {
+	align-self: center;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+div.input {
+	position: relative;
+	margin-top: 25px;
+}
+
+div.input label{
+	position: absolute;
+	top: 0;
+	transform: translateY(-50%);
+	left: 10px;
+	background-color: white;
+	padding: 5px 2px
+}
+
+div.input input{
+	padding: 10px 20px;
+	font-size: 25px;
+	outline: 0;
+}
+
+button.login{
+	position: relative;
+	margin-top: 25px;
+	padding: 10px;
+}
+
+#waring{
+	color: #990000;
+	font-size: 15px;
+	font-style: italic;
+}
